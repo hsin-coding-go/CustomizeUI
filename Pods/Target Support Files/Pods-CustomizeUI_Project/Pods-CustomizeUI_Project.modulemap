@@ -1,0 +1,6 @@
+framework module Pods_CustomizeUI_Project {
+  umbrella header "Pods-CustomizeUI_Project-umbrella.h"
+
+  export *
+  module * { export * }
+}

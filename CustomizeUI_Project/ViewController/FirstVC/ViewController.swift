@@ -35,7 +35,6 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
-
         
         let firstVC = FirstViewController()
         firstVC.view.backgroundColor = UIColor.red

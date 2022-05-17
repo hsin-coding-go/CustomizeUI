@@ -31,4 +31,43 @@ class MainViewController: UIViewController {
     }
     
     
+    @IBAction func toForthVC(_ sender: Any) {
+        let settingVC = SettingViewController()
+////        self.navigationController?.pushViewController(settingVC, animated: true)
+//
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.type = CATransitionType.push
+//        transition.subtype = CATransitionSubtype.fromRight
+//        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//        present(settingVC, animated: false, completion: nil)
+        settingVC.modalPresentationStyle = .overFullScreen
+        self.presentDetail(settingVC)
+    }
+    
+    
+}
+
+extension UIViewController {
+
+    func presentDetail(_ viewControllerToPresent: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+
+        present(viewControllerToPresent, animated: false)
+    }
+
+    func dismissDetail() {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+
+        dismiss(animated: false)
+    }
 }
